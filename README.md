@@ -21,27 +21,27 @@ Considering the following two examples (`examples/report_1.xml` and `examples/re
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <results version="2">
-    <cppcheck version="1.82"/>
+  <cppcheck version="1.82"/>
     <errors>
-Checking main.c ...
-        <error id="uninitvar" severity="error" msg="Uninitialized variable: p" verbose="Uninitialized variable: p" cwe="908">
-            <location file="main.c" line="4"/>
-        </error>
+      Checking main.c ...
+      <error id="uninitvar" severity="error" msg="Uninitialized variable: p" verbose="Uninitialized variable: p" cwe="908">
+        <location file="main.c" line="4"/>
+      </error>
     </errors>
 </results>
 ```
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <results version="2">
-    <cppcheck version="1.82"/>
+  <cppcheck version="1.82"/>
     <errors>
-Checking main.c ...
-        <error id="uninitvar" severity="error" msg="Uninitialized variable: p" verbose="Uninitialized variable: p" cwe="908">
-            <location file="main.c" line="4"/>
-        </error>
-		<error id="uninitvar" severity="error" msg="Uninitialized variable: p" verbose="Uninitialized variable: p2" cwe="908">
-            <location file="main.c" line="5"/>
-        </error>
+      Checking main.c ...
+      <error id="uninitvar" severity="error" msg="Uninitialized variable: p" verbose="Uninitialized variable: p" cwe="908">
+        <location file="main.c" line="4"/>
+      </error>
+      <error id="uninitvar" severity="error" msg="Uninitialized variable: p" verbose="Uninitialized variable: p2" cwe="908">
+        <location file="main.c" line="5"/>
+      </error>
     </errors>
 </results>
 ```
@@ -49,33 +49,33 @@ The script produces the following two outputs (without options and using option 
 ```xml
 $ python merge_cppcheck_reports.py examples/report_1.xml examples/report_2.xml
 <results version="2">
-    <cppcheck version="1.82" />
+  <cppcheck version="1.82" />
     <errors>
-Checking main.c ...
-        <error cwe="908" id="uninitvar" msg="Uninitialized variable: p" severity="error" verbose="Uninitialized variable: p">
-            <location file="main.c" line="4" />
-        </error>
-    <error cwe="908" id="uninitvar" msg="Uninitialized variable: p" severity="error" verbose="Uninitialized variable: p">
-            <location file="main.c" line="4" />
-        </error>
-                <error cwe="908" id="uninitvar" msg="Uninitialized variable: p" severity="error" verbose="Uninitialized variable: p2">
-            <location file="main.c" line="5" />
-        </error>
+      Checking main.c ...
+      <error cwe="908" id="uninitvar" msg="Uninitialized variable: p" severity="error" verbose="Uninitialized variable: p">
+        <location file="main.c" line="4" />
+      </error>
+      <error cwe="908" id="uninitvar" msg="Uninitialized variable: p" severity="error" verbose="Uninitialized variable: p">
+        <location file="main.c" line="4" />
+      </error>
+      <error cwe="908" id="uninitvar" msg="Uninitialized variable: p" severity="error" verbose="Uninitialized variable: p2">
+        <location file="main.c" line="5" />
+      </error>
     </errors>
 </results>
 ```
 ```xml
 $ python merge_cppcheck_reports.py examples/report_1.xml examples/report_2.xml -r
 <results version="2">
-    <cppcheck version="1.82" />
+  <cppcheck version="1.82" />
     <errors>
-Checking main.c ...
-        <error cwe="908" id="uninitvar" msg="Uninitialized variable: p" severity="error" verbose="Uninitialized variable: p">
-            <location file="main.c" line="4" />
-        </error>
-    <error cwe="908" id="uninitvar" msg="Uninitialized variable: p" severity="error" verbose="Uninitialized variable: p2">
-            <location file="main.c" line="5" />
-        </error>
+      Checking main.c ...
+      <error cwe="908" id="uninitvar" msg="Uninitialized variable: p" severity="error" verbose="Uninitialized variable: p">
+        <location file="main.c" line="4" />
+      </error>
+      <error cwe="908" id="uninitvar" msg="Uninitialized variable: p" severity="error" verbose="Uninitialized variable: p2">
+        <location file="main.c" line="5" />
+      </error>
     </errors>
 </results>
 ```

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <results version="2">
-    <cppcheck version="1.82"/>
+  <cppcheck version="1.82"/>
     <errors>
-Checking main.c ...
-        <error id="uninitvar" severity="error" msg="Uninitialized variable: p" verbose="Uninitialized variable: p" cwe="908">
-            <location file="main.c" line="4"/>
-        </error>
-		<error id="uninitvar" severity="error" msg="Uninitialized variable: p" verbose="Uninitialized variable: p2" cwe="908">
-            <location file="main.c" line="5"/>
-        </error>
+      Checking main.c ...
+      <error id="uninitvar" severity="error" msg="Uninitialized variable: p" verbose="Uninitialized variable: p" cwe="908">
+        <location file="main.c" line="4"/>
+      </error>
+      <error id="uninitvar" severity="error" msg="Uninitialized variable: p" verbose="Uninitialized variable: p2" cwe="908">
+        <location file="main.c" line="5"/>
+      </error>
     </errors>
 </results>
