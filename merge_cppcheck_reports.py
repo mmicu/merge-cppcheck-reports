@@ -65,7 +65,7 @@ def _get_missing_attributes(node, attribute_list):
     except AttributeError:
         return attribute_list
 
-    return [attr for attr in attribute_list if attr not in node.attrib]
+    return list(filter(lambda p: p not in node.attrib, attribute_list))
 
 
 def _encode_string(s):
